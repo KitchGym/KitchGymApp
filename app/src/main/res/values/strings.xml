@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">KitchGym</string>
+    <string name="createWorkout">Create New Workout</string>
+    <string name="viewWorkouts">View Saved Workouts</string>
+    <string name="gymTitle">Gym</string>
+    <string name="biceps">Biceps</string>
+    <string name="triceps">Triceps</string>
+    <string name="shoulders">Shoulders</string>
+    <string name="back">Back</string>
+    <string name="abs">Abs</string>
+    <string name="legs">Legs</string>
+    <string name="muscleTitle">Choose Your Target Muscle Groups</string>
+    <string name="generateWorkout">Generate Workout</string>
+    <string name="genWorkoutTitle">Today\'s Workout:</string>
+    <string name="selectToChange">To replace an exercise, select it. When satisfied with your workout, press \"Start Workout\" to begin!</string>
+    <string name="beginWorkout">Start Workout</string>
+    <string name="endWorkout">End Workout</string>
+    <string name="replaceExercise">Exercise to Replace:</string>
+    <string name="browseEx">Choose an exercise:</string>
+    <string name="replace">Replace</string>
+
 </resources>

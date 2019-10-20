@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kitchen"></activity>
+        <activity android:name=".editWorkout"></activity>
+        <activity android:name=".doWorkout" />
+        <activity android:name=".generateWorkout" />
+        <activity android:name=".muscleGroups" />
+        <activity android:name=".Kitchen" />
         <activity android:name=".Gym" />
         <activity android:name=".MainActivity">
             <intent-filter>
