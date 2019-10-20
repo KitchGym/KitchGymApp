@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KitchGym</string>
+    <string name="gym_name">Gym</string>
+    <string name="kitchen_name">Kitchen</string>
 </resources>
