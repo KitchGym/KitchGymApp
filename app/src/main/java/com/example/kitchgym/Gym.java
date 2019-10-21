@@ -19,8 +19,8 @@ public class Gym extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*public void switchToMuscleGroups(View view) {
-        Intent intent = new Intent(this, muscleGroups.class);
+    public void switchTogenerateWorkout(View view) {
+        Intent intent = new Intent(this, generateWorkout.class);
         startActivity(intent);
-    }*/
+    }
 }
