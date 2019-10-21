@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".Kitchen">
+tools:context=".Gym">
 
 <Button
     android:id="@+id/createWorkout"
@@ -20,7 +20,8 @@ tools:context=".Kitchen">
     app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    android:onClick="switchToMuscleGroups"/>
 
 <Button
     android:id="@+id/viewWorkouts"

@@ -25,7 +25,7 @@
         android:layout_marginRight="83dp"
         android:layout_marginBottom="68dp"
         android:onClick="switchToGym"
-        android:text="@string/gym_name" />
+        android:text="GYM" />
 
     <ImageView
         android:id="@+id/gymImg"
@@ -54,7 +54,7 @@
         android:layout_marginRight="83dp"
         android:layout_marginBottom="59dp"
         android:onClick="switchToKitchen"
-        android:text="@string/kitchen_name" />
+        android:text="Kitchen" />
 
     <ImageView
         android:id="@+id/kitchenImg"
