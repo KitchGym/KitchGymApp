@@ -23,7 +23,7 @@ function App() {
         Welcome to KitchGym!
       </h1>
       <h2 className="App-header">
-        Made to assist you along your health and fitness journey.
+        Here to assist you along your health and fitness journey.
       </h2>
       <TextField
         id="standard-name"

@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Gym">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Kitchen">
 
+<Button
+    android:id="@+id/createWorkout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="115dp"
+    android:layout_marginLeft="115dp"
+    android:layout_marginTop="173dp"
+    android:layout_marginEnd="115dp"
+    android:layout_marginRight="115dp"
+    android:layout_marginBottom="48dp"
+    android:text="@string/createWorkout"
+    app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<Button
+    android:id="@+id/viewWorkouts"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="114dp"
+    android:layout_marginLeft="114dp"
+    android:layout_marginTop="36dp"
+    android:layout_marginEnd="114dp"
+    android:layout_marginRight="114dp"
+    android:text="@string/viewWorkouts"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/createWorkout" />
+
+<TextView
+    android:id="@+id/gymTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="164dp"
+    android:layout_marginLeft="164dp"
+    android:layout_marginTop="39dp"
+    android:layout_marginEnd="165dp"
+    android:layout_marginRight="165dp"
+    android:layout_marginBottom="80dp"
+    android:text="@string/gymTitle"
+    android:textSize="40sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toTopOf="@+id/createWorkout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
