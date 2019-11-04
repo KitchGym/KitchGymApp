@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">KitchGym</string>
+    <string name="gym_name">Gym</string>
+    <string name="kitchen_name">Kitchen</string>
     <string name="createWorkout">Create New Workout</string>
     <string name="viewWorkouts">View Saved Workouts</string>
     <string name="gymTitle">Gym</string>
