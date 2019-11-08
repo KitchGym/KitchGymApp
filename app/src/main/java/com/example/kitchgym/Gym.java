@@ -36,6 +36,7 @@ public class Gym extends AppCompatActivity {
 
         Line line = new Line(yAxisValues).setColor(Color.parseColor("#FF6161"));
 
+        //add values into the lists
         for(int i = 0; i < axisData.length; i++){
             axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
         }
@@ -44,14 +45,18 @@ public class Gym extends AppCompatActivity {
             yAxisValues.add(new PointValue(i, yAxisData[i]));
         }
 
+        //the line of the chart
         List lines = new ArrayList();
         lines.add(line);
 
+        //add the line to the chart
         LineChartData data = new LineChartData();
         data.setLines(lines);
 
+        //make it visible
         lineChartView.setLineChartData(data);
 
+        //axis info and settings
         Axis axis = new Axis();
         axis.setValues(axisValues);
         data.setAxisXBottom(axis);
