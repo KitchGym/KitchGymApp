@@ -6,40 +6,55 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Gym">
 
-<Button
-    android:id="@+id/createWorkout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="115dp"
-    android:layout_marginLeft="115dp"
-    android:layout_marginTop="173dp"
-    android:layout_marginEnd="115dp"
-    android:layout_marginRight="115dp"
-    android:layout_marginBottom="48dp"
-    android:text="@string/createWorkout"
-    app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:onClick="switchToMuscleGroups"/>
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/chart"
+        android:layout_width="351dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/createWorkout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gymTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
-<Button
-    android:id="@+id/viewWorkouts"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="114dp"
-    android:layout_marginLeft="114dp"
-    android:layout_marginTop="36dp"
-    android:layout_marginEnd="114dp"
-    android:layout_marginRight="114dp"
-    android:text="@string/viewWorkouts"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/createWorkout"
-    android:onClick="switchTosavedWorkouts"/>
+    <Button
+        android:id="@+id/createWorkout"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:layout_marginBottom="48dp"
+        android:onClick="switchToMuscleGroups"
+        android:text="@string/createWorkout"
+        app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
+    <Button
+        android:id="@+id/viewWorkouts"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:text="@string/viewWorkouts"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createWorkout" />
+
+    <TextView
     android:id="@+id/gymTitle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

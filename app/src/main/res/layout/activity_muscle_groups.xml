@@ -7,54 +7,101 @@
     tools:context=".muscleGroups">
 
     <CheckBox
-        android:id="@+id/legs"
+        android:id="@+id/abs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/legs"
-        app:layout_constraintTop_toBottomOf="@+id/Back"
-        tools:layout_editor_absoluteX="153dp" />
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginRight="187dp"
+        android:layout_marginBottom="137dp"
+        android:text="@string/abs"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legs" />
 
     <CheckBox
         android:id="@+id/biceps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/biceps"
         app:layout_constraintBottom_toTopOf="@+id/triceps"
-        app:layout_constraintTop_toBottomOf="@+id/muscleGroupsTitle"
-        tools:layout_editor_absoluteX="153dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/muscleGroupsTitle" />
+
+    <CheckBox
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toTopOf="@+id/legs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoulders" />
 
     <CheckBox
         android:id="@+id/triceps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginRight="164dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/triceps"
         app:layout_constraintBottom_toTopOf="@+id/shoulders"
-        app:layout_constraintTop_toBottomOf="@+id/biceps"
-        tools:layout_editor_absoluteX="153dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biceps" />
 
     <CheckBox
-        android:id="@+id/Back"
+        android:id="@+id/legs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/back"
-        app:layout_constraintBottom_toTopOf="@+id/legs"
-        app:layout_constraintTop_toBottomOf="@+id/shoulders"
-        tools:layout_editor_absoluteX="152dp" />
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginRight="181dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/legs"
+        app:layout_constraintBottom_toTopOf="@+id/abs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <CheckBox
         android:id="@+id/shoulders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/shoulders"
-        app:layout_constraintBottom_toTopOf="@+id/Back"
-        app:layout_constraintTop_toBottomOf="@+id/triceps"
-        tools:layout_editor_absoluteX="152dp" />
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/triceps" />
 
     <TextView
         android:id="@+id/muscleGroupsTitle"
@@ -65,16 +112,14 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/muscleTitle"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/biceps"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -82,13 +127,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="122dp"
         android:layout_marginLeft="122dp"
-        android:layout_marginTop="208dp"
         android:layout_marginEnd="123dp"
         android:layout_marginRight="123dp"
         android:layout_marginBottom="64dp"
+        android:onClick="switchToGenerateWorkout"
         android:text="@string/generateWorkout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/legs" />
+        app:layout_constraintTop_toBottomOf="@+id/abs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
