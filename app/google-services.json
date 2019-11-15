@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "956000346759",
+    "firebase_url": "https://thekitchgym.firebaseio.com",
+    "project_id": "thekitchgym",
+    "storage_bucket": "thekitchgym.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956000346759:android:3b76a745ecf6efd8d38e22",
+        "android_client_info": {
+          "package_name": "com.example.kitchgym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956000346759-5ks90qfvrvps16v71jlu9efphpcriq2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhUfVJhNqonvlOVP7Ka93g9WefiMaMBPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956000346759-5ks90qfvrvps16v71jlu9efphpcriq2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
