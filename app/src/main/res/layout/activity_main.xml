@@ -4,9 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="0"
     tools:context=".MainActivity">
 
+
+    <EditText
+        android:id="@+id/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/KitchenButton"
+        android:layout_alignStart="@+id/gymImg"
+        android:layout_alignEnd="@+id/gymImg"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="300dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="textPersonName"
+        android:text="KitchGym"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
         android:id="@+id/gymButton"
@@ -32,8 +48,9 @@
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="129dp"
+        android:layout_marginEnd="55dp"
         android:layout_marginBottom="50dp"
         android:src="@drawable/gym" />
 
@@ -63,5 +80,13 @@
         android:layout_below="@id/gymImg"
         android:layout_centerHorizontal="true"
         android:src="@drawable/kitchen" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/whiteBackground" />
 
 </RelativeLayout>
