@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class doWorkout extends AppCompatActivity {
+public class workoutViewer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_do_workout);
+        setContentView(R.layout.activity_workout_viewer);
     }
 
     public void switchToGymHome(View view) {

@@ -74,4 +74,14 @@ public class Gym extends AppCompatActivity {
         Intent intent = new Intent(this, muscleGroups.class);
         startActivity(intent);
     }
+
+    public void switchToSavedWorkouts(View view) {
+        Intent intent = new Intent(this, workoutViewer.class);
+        startActivity(intent);
+    }
+
+    public void switchToMainActivity(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
