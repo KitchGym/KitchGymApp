@@ -5,4 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Gym">
+
+    <Button
+        android:id="@+id/createWorkout2"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="48dp"
+        android:text="@string/inputFood"
+        app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gymTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="150dp"
+        android:text="@string/kitchen_name"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="176dp"
+        android:text="@string/totalCalories"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gymTitle2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
