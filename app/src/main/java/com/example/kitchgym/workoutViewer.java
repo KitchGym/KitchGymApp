@@ -6,17 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Kitchen extends AppCompatActivity {
+public class workoutViewer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchen);
+        setContentView(R.layout.activity_workout_viewer);
     }
 
-    public void switchToInputFood(View view) {
-        Intent intent = new Intent(this, inputFood.class);
+    public void switchToGymHome(View view) {
+        Intent intent = new Intent(this, Gym.class);
         startActivity(intent);
     }
-
 }
