@@ -67,12 +67,12 @@
         android:hint="Goal Weight" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="Email" />
+        android:inputType="text"
+        android:hint="Username" />
 
     <EditText
         android:id="@+id/password"
