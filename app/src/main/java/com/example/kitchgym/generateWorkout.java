@@ -23,7 +23,7 @@ public class generateWorkout extends AppCompatActivity {
     public Exercise ex = new Exercise();
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference testRef = database.getReference("Exercises/test");
+    DatabaseReference testRef = database.getReference("Exercises/kaedon");
     DatabaseReference absRef = database.getReference("Exercises/Abs");
     DatabaseReference armsRef = database.getReference("Exercises/Arms");
     DatabaseReference backRef = database.getReference("Exercises/Back");
@@ -32,12 +32,17 @@ public class generateWorkout extends AppCompatActivity {
     DatabaseReference shouldersRef = database.getReference("Exercises/Shoulders");
 
 
-    public void firstDo(){
-        testRef.addListenerForSingleValueEvent(new ValueEventListener() {
+    public void testRetrieve(){
+        absRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String extest = dataSnapshot.getValue(String.class);
-                Log.d("Test", extest);
+                //String extest = dataSnapshot.getValue(String.class);
+                //Log.d("Test", extest);
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String key = ds.getKey();
+                    String value = ds.getValue(String.class);
+                    Log.d("TAG", key + value);
+                }
             }
 
             @Override
@@ -52,16 +57,18 @@ public class generateWorkout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_workout);
-        final TextView optionsChosen = findViewById(R.id.bicepWorkouts);
+        //final TextView optionsChosen = findViewById(R.id.bicepWorkouts);
         //muscles = getIntent().getStringArrayListExtra("muscleGroups");
         Log.d("ONCREATE", "ONCREATE started");
-        firstDo();
-        Log.d("ONCREATE", ex.name);
+
+        //testRetrieve();
 
         Log.d("ONCREATE", "ONCREATE ended");
 
 
     }
+
+
 
 
 
