@@ -52,7 +52,9 @@ public class LoginActivity extends AppCompatActivity {
                         password.getText().toString().trim())
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
+
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     // Task completed successfully
                                     Toast.makeText(getApplicationContext(), "Login Successful",
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class ));
                                 } else {
                                     // Task failed with an exception
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(),
+                                    Toast.makeText(getApplicationContext(), "Login Failed",
                                             Toast.LENGTH_LONG).show();
                                 }
                             }
