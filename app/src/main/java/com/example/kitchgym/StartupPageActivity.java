@@ -1,8 +1,5 @@
 package com.example.kitchgym;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,17 +8,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class StartupPageActivity extends AppCompatActivity {
 
+    final static String TAG = "Registering...";
     Toolbar toolbar;
     ProgressBar progressBar;
     Button signup;
@@ -29,15 +32,25 @@ public class StartupPageActivity extends AppCompatActivity {
     EditText name;
     EditText weight;
     EditText goalWeight;
-    EditText email;
+    EditText username;
     EditText password;
 
     FirebaseAuth firebaseAuth;
+
+    FirebaseDatabase database;
+    DatabaseReference referenceToDatabase;
+
+    ValueEventListener listener;
+
+    User user;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startup);
+
+        database = FirebaseDatabase.getInstance();
+        referenceToDatabase = database.getReference().child("Users");
 
         toolbar = findViewById(R.id.toolbar);
         progressBar = findViewById(R.id.progressBar);
@@ -46,71 +59,90 @@ public class StartupPageActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         weight = findViewById(R.id.weight);
         goalWeight = findViewById(R.id.goalWeight);
-        email = findViewById(R.id.email);
+        username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+        user = new User();
 
         toolbar.setTitle("KitchGym Login");
 
-        firebaseAuth = FirebaseAuth.getInstance();
 
-        // Register User
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //error checking to see if all fields are filled in
+                boolean error = false;
 
-                progressBar.setVisibility(View.VISIBLE);
-                firebaseAuth.createUserWithEmailAndPassword(email.getText().toString().trim(),
-                        password.getText().toString().trim())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Task completed successfully
-                                    AuthResult result = task.getResult();
-                                    /*Toast.makeText(getApplicationContext(), "Registered Successfully",
-                                            Toast.LENGTH_LONG).show();*/
+                if (name.getText().toString().equals("")) {
+                    error = true;
+                    name.setError("Enter your name");
+                }
+                if (username.getText().toString().equals("") || username.getText().toString().contains(".") ||
+                        username.getText().toString().contains("#") || username.getText().toString().contains("$") ||
+                        username.getText().toString().contains("[") || username.getText().toString().contains("]")){
+                    error = true;
+                    username.setError("Enter your username");
+                }
+                if (password.getText().toString().equals("")) {
+                    error = true;
+                    password.setError("Enter a password");
+                }
+                if (weight.getText().toString().equals("")) {
+                    error = true;
+                    weight.setError("Enter a weight");
+                }
+                if (goalWeight.getText().toString().equals("")) {
+                    error = true;
+                    goalWeight.setError("Enter a goal weight");
+                }
 
-                                    User user = new User(
-                                            name.getText().toString().trim(),
-                                            email.getText().toString().trim(),
-                                            password.getText().toString().trim(),
-                                            Float.parseFloat(weight.getText().toString().trim()),
-                                            Float.parseFloat(goalWeight.getText().toString().trim())
-                                    );
-                                    // Add user to database
-                                    FirebaseDatabase.getInstance().getReference("Users")
-                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            progressBar.setVisibility(View.GONE);
-                                            if (task.isSuccessful()) {
-                                                Toast.makeText(StartupPageActivity.this,
-                                                        "Registration Successful",
-                                                        Toast.LENGTH_LONG);
-                                            }
-                                            else{
-                                                Toast.makeText(getApplicationContext(), task.getException().getMessage(),
-                                                        Toast.LENGTH_LONG).show();
-                                            }
-                                        }
-                                    });
 
-                                    email.setText("");
-                                    password.setText("");
-                                    name.setText("");
-                                    weight.setText("");
-                                    goalWeight.setText("");
+                if (error) {
+                    Toast.makeText(getApplicationContext(), "Fill in all of the fields!", Toast.LENGTH_LONG).show();
+                } else {
 
-                                } else {
-                                    // Task failed with an exception
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(),
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
+                    user.setName(name.getText().toString().trim());
+                    user.setUsername(username.getText().toString().trim());
+                    user.setPassword(password.getText().toString().trim());
+                    user.setWeight(Float.parseFloat(weight.getText().toString().trim()));
+                    user.setGoalWeight(Float.parseFloat(goalWeight.getText().toString().trim()));
+                    user.setUsernameAndPassword(username.getText().toString().trim() + "_" + password.getText().toString().trim());
+
+                    //this jumps up to the database listener
+                    //query on the data to check for multiple usernames, activates the listener, so rest of code is there
+                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                    Query query = rootRef.child("Users").orderByChild("username").equalTo(user.getUsername());
+                    query.addListenerForSingleValueEvent(listener);
+                }
+
+
             }
         });
+
+        listener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (!dataSnapshot.exists()) {
+
+                    DatabaseReference childUser = referenceToDatabase.child(user.getUsername());
+                    childUser.setValue(user);
+                    Toast.makeText(getApplicationContext(), "Successfully registered!", Toast.LENGTH_LONG).show();
+
+                    Intent intent = new Intent(StartupPageActivity.this, LoginActivity.class );
+                    intent.putExtra("User", user);
+                    startActivity(intent);
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Username is taken! Please choose another.", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+
+        };
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

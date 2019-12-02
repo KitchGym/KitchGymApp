@@ -19,11 +19,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchToGym(View view) {
         Intent intent = new Intent(this, Gym.class);
+
+        intent.putExtra("User", getIntent().getSerializableExtra("User"));
+        startActivity(intent);
+
         startActivity(intent);
     }
 
     public void switchToKitchen(View view) {
         Intent intent = new Intent(this, Kitchen.class);
+
+        intent.putExtra("User", getIntent().getSerializableExtra("User"));
+        startActivity(intent);
+
         startActivity(intent);
     }
 }
