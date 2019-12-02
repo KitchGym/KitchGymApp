@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "956000346759-e1004drolsommfmhtajksbp4mqnlf63g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kitchgym",
+            "certificate_hash": "ffaa4308ecee121bf6ba6b75de11f6111143cc8d"
+          }
+        },
+        {
           "client_id": "956000346759-5ks90qfvrvps16v71jlu9efphpcriq2q.apps.googleusercontent.com",
           "client_type": 3
         }
