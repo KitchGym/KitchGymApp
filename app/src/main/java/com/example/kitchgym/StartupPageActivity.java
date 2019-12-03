@@ -25,8 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 public class StartupPageActivity extends AppCompatActivity {
 
     final static String TAG = "Registering...";
-    Toolbar toolbar;
-    ProgressBar progressBar;
     Button signup;
     Button login;
     EditText name;
@@ -52,8 +50,6 @@ public class StartupPageActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         referenceToDatabase = database.getReference().child("Users");
 
-        toolbar = findViewById(R.id.toolbar);
-        progressBar = findViewById(R.id.progressBar);
         signup = findViewById(R.id.signUpBtn);
         login = findViewById(R.id.loginBtn);
         name = findViewById(R.id.name);
@@ -63,7 +59,6 @@ public class StartupPageActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         user = new User();
 
-        toolbar.setTitle("KitchGym Login");
 
 
         signup.setOnClickListener(new View.OnClickListener() {
