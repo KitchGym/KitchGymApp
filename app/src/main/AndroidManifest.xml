@@ -24,7 +24,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".savedWorkouts" />
-        <activity android:name=".editWorkout" />
         <activity android:name=".doWorkout" />
         <activity android:name=".generateWorkout" />
         <activity android:name=".muscleGroups" />

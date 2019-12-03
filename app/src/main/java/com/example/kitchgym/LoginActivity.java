@@ -24,8 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginActivity extends AppCompatActivity {
 
     final String TAG = "Login";
-    Toolbar toolbar;
-    ProgressBar progressBar;
     Button login;
     EditText username;
     EditText password;
@@ -45,12 +43,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // UI
-        toolbar = findViewById(R.id.toolbar2);
-        progressBar = findViewById(R.id.progressBar2);
         login = findViewById(R.id.userLoginBtn);
         username = findViewById(R.id.usernameLogin);
         password = findViewById(R.id.passwordLogin);
-        toolbar.setTitle("Login");
 
         // Database
         database = FirebaseDatabase.getInstance();
@@ -61,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                progressBar.setVisibility(View.VISIBLE);
                 checkUsernameAndPassword();
 
             }

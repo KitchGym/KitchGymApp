@@ -1,91 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
 
-    <EditText
-        android:id="@+id/TitleText"
+    <ImageButton
+        android:id="@+id/mainKitchenButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:onClick="switchToKitchen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mainGymButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/mainGymButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:contentDescription="Gym"
+        android:onClick="switchToGym"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainKitchenButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kitchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/KitchenButton"
-        android:layout_alignStart="@+id/gymImg"
-        android:layout_alignEnd="@+id/gymImg"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="300dp"
-        android:ems="10"
-        android:fontFamily="sans-serif-black"
-        android:inputType="textPersonName"
-        android:text="   KitchGym"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:text="Kitch"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/mainKitchenButton"
+        app:layout_constraintEnd_toEndOf="@+id/mainKitchenButton"
+        app:layout_constraintTop_toTopOf="@+id/mainKitchenButton" />
 
-    <Button
-        android:id="@+id/gymButton"
-        android:layout_width="135dp"
-        android:layout_height="82dp"
-        android:layout_alignStart="@+id/gymImg"
-        android:layout_alignLeft="@+id/gymImg"
-        android:layout_alignTop="@+id/gymImg"
-        android:layout_alignEnd="@+id/gymImg"
-        android:layout_alignRight="@+id/gymImg"
-        android:layout_alignBottom="@+id/gymImg"
-        android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:layout_marginBottom="68dp"
-        android:onClick="switchToGym"
-        android:text="GYM" />
+    <TextView
+        android:id="@+id/gymText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gym"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kitchText"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/gymImg"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="129dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/gym" />
-
-    <Button
-        android:id="@+id/KitchenButton"
-        android:layout_width="135dp"
-        android:layout_height="82dp"
-        android:layout_alignStart="@+id/kitchenImg"
-        android:layout_alignLeft="@+id/kitchenImg"
-        android:layout_alignTop="@+id/kitchenImg"
-        android:layout_alignEnd="@+id/kitchenImg"
-        android:layout_alignRight="@+id/kitchenImg"
-        android:layout_alignBottom="@+id/kitchenImg"
-        android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginRight="83dp"
-        android:layout_marginBottom="59dp"
-        android:onClick="switchToKitchen"
-        android:text="Kitchen" />
-
-    <ImageView
-        android:id="@+id/kitchenImg"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_below="@id/gymImg"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/kitchen" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        app:srcCompat="@drawable/whitebckgrnd" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
