@@ -25,9 +25,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/arms"
-        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/chest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
@@ -41,6 +47,22 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shoulders" />
+
+    <CheckBox
+        android:id="@+id/chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginRight="164dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/chest"
+        app:layout_constraintBottom_toTopOf="@+id/shoulders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arms" />
 
     <CheckBox
         android:id="@+id/legs"
@@ -62,7 +84,7 @@
         android:text="@string/shoulders"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/muscleGroupsTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/chest" />
 
     <TextView
         android:id="@+id/muscleGroupsTitle"
@@ -74,6 +96,7 @@
         android:text="@string/muscleTitle"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/arms"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +113,6 @@
         android:text="@string/generateWorkout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
