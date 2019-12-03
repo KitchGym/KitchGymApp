@@ -28,23 +28,21 @@ import com.google.firebase.database.ValueEventListener;
 
 public class generateWorkout extends AppCompatActivity {
 
-    //private List<String> muscles = getIntent().getStringArrayListExtra("muscleGroups");
+    private List<String> workout = new ArrayList<>();
+    private List<String> muscles;
     private DatabaseReference mExerciseReference, absRef, armsRef, backRef, chestRef, legsRef, shouldersRef;
     private ValueEventListener mExerciseListener;
     private String exerciseName;
-    Exercise ex;
 
     private TextView eTitle;
     private RecyclerView mExerciseRecycler;
-    ArrayList<HashMap<String,String>> allExerciseList;
-    String selectedExerciseName, selectedExerciseDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_workout);
         //final TextView optionsChosen = findViewById(R.id.bicepWorkouts);
-        //muscles = getIntent().getStringArrayListExtra("muscleGroups");
+        muscles = getIntent().getStringArrayListExtra("muscleGroups");
         Log.d("ONCREATE", "Entered onCreate()");
 
 
@@ -64,44 +62,146 @@ public class generateWorkout extends AppCompatActivity {
 
     }
 
+
+    @Override
     public void onStart(){
         super.onStart();
-        Log.d("ONSTART", "Entered onStart()");
-        mExerciseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                System.out.println("Test");
-                for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
-                    //System.out.println(childSnapshot.getValue(E.class));
-                    ex = childSnapshot.getValue(Exercise.class);
-                    System.out.println(ex.getOne());
-                    System.out.println(ex.getTwo());
-                    System.out.println(ex.getThree());
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+        System.out.println("Entering createWorkout()");
+        System.out.println("Entering loop");
+        for (String temp : muscles) {
+            System.out.println("Testing for: " + temp);
+            if (temp.equals("abs")) {
+                System.out.println("Entered Abs");
+                absRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
             }
-        });
+            else if (temp.equals("arms")) {
+                System.out.println("Entered Arms");
+                armsRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                            //System.out.println(childSnapshot.getValue(E.class));
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
+            }
+            else if (temp.equals("back")) {
+                System.out.println("Entered Back");
+                backRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                            //System.out.println(childSnapshot.getValue(E.class));
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
+            }
+            else if (temp.equals("chest")) {
+                System.out.println("Entered Chest");
+                chestRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                            //System.out.println(childSnapshot.getValue(E.class));
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
+            }
+            else if (temp.equals("legs")) {
+                System.out.println("Entered Legs");
+                legsRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                            //System.out.println(childSnapshot.getValue(E.class));
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
+            }
+            else if (temp.equals("shoulders")) {
+                System.out.println("Entered Shoulders");
+                shouldersRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                            //System.out.println(childSnapshot.getValue(E.class));
+                            exerciseName = childSnapshot.getValue(String.class);
+                            workout.add(exerciseName);
+                            System.out.println("Added ~" + exerciseName + "~ to the list");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("TAG", "loadExercise:onCancelled", databaseError.toException());
+                    }
+                });
+            }
+        }
     }
+
 
     /*@Override
     public void onStart(){
         super.onStart();
         Log.d("ONSTART", "Entered onStart()");
-        mExerciseReference.addValueEventListener(new ValueEventListener() {
+        absRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 System.out.println("Test");
                 for(DataSnapshot childSnapshot : dataSnapshot.getChildren()){
                     //System.out.println(childSnapshot.getValue(E.class));
-                    ex = childSnapshot.getValue(Exercise.class);
-                    System.out.println(ex.getOne());
-                    System.out.println(ex.getTwo());
-                    System.out.println(ex.getThree());
+                    exerciseName = childSnapshot.getValue(String.class);
+                    //System.out.println(ex.getOne());
+                    //System.out.println(ex.getTwo());
+                    //System.out.println(ex.getThree());
+                    System.out.println(exerciseName);
                 }
             }
 
