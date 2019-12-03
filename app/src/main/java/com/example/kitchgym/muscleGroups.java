@@ -32,9 +32,6 @@ public class muscleGroups extends AppCompatActivity {
         backBox = findViewById(R.id.back);
         legsBox = findViewById(R.id.legs);
         absBox = findViewById(R.id.abs);
-
-        Log.d("ONSTART", "Entered onStart()");
-
     }
 
 
@@ -56,7 +53,6 @@ public class muscleGroups extends AppCompatActivity {
             muscleGroups.add("legs");
         if(absBox.isChecked())
             muscleGroups.add("abs");
-
 
         Intent intent = new Intent(this, generateWorkout.class);
         intent.putStringArrayListExtra("muscleGroups", (ArrayList<String>) muscleGroups);

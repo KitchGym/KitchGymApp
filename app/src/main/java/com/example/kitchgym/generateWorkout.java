@@ -31,23 +31,23 @@ public class generateWorkout extends AppCompatActivity {
     private List<String> workout = new ArrayList<>();
     private List<String> muscles;
     private DatabaseReference mExerciseReference, absRef, armsRef, backRef, chestRef, legsRef, shouldersRef;
-    private ValueEventListener mExerciseListener;
     private String exerciseName;
 
+
     private TextView eTitle;
-    private RecyclerView mExerciseRecycler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("1");
         setContentView(R.layout.activity_generate_workout);
-        //final TextView optionsChosen = findViewById(R.id.bicepWorkouts);
+        System.out.println("2");
         muscles = getIntent().getStringArrayListExtra("muscleGroups");
-        Log.d("ONCREATE", "Entered onCreate()");
-
-
+        System.out.println("3");
         eTitle = findViewById(R.id.todaysWorkoutTItle);
+        System.out.println("4");
         mExerciseReference = FirebaseDatabase.getInstance().getReference("Exercises");
+        System.out.println("5");
         absRef = mExerciseReference.child("Abs");
         armsRef = mExerciseReference.child("Arms");
         backRef = mExerciseReference.child("Back");
@@ -55,18 +55,13 @@ public class generateWorkout extends AppCompatActivity {
         legsRef = mExerciseReference.child("Legs");
         shouldersRef = mExerciseReference.child("Shoulders");
 
-
-        mExerciseRecycler = findViewById(R.id.recyclerExercise);
-
-        mExerciseRecycler.setLayoutManager(new LinearLayoutManager(this));
-
+        System.out.println("Entering createWorkout()");
     }
 
 
     @Override
     public void onStart(){
         super.onStart();
-
         System.out.println("Entering createWorkout()");
         System.out.println("Entering loop");
         for (String temp : muscles) {
