@@ -1,63 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Gym">
+    tools:context=".Kitchen"
+    android:id="@+id/main_frame">
 
-    <Button
-        android:id="@+id/inputFoodButton"
-        android:layout_width="215dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="switchToInputFood"
-        android:text="@string/inputFood"
-        app:layout_constraintBottom_toTopOf="@+id/viewWorkouts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+        android:id="@+id/KitchenFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/gymTitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="150dp"
-        android:text="@string/kitchen_name"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/inputFoodButton"
+                android:layout_width="215dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="550dp"
+                android:layout_marginEnd="115dp"
+                android:layout_marginBottom="48dp"
+                android:text="@string/inputFood"
+               />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="176dp"
-        android:text="@string/totalCalories"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gymTitle2" />
+            <Button
+                android:id="@+id/macrosButton"
+                android:layout_width="215dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="650dp"
+                android:layout_marginEnd="115dp"
+                android:layout_marginBottom="48dp"
+                android:text="@string/calcMacros"
+                />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/inputFoodButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <TextView
+                android:id="@+id/kitchen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/kitchen_name"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                 />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <!--<TextView
+                android:id="@+id/totalCal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/totalCalories"
+                android:textSize="20sp"
+                />-->
+
+            <TextView
+                android:id="@+id/goalWeightTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_marginStart="100dp"
+
+                android:text="Goal Weight: "
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/goalWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+
+                android:text=""
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/goalWeightTxt" />
+
+            <TextView
+                android:id="@+id/foodTitle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/goalWeightTxt"
+                android:text="Food"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/foodEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/goalWeightTxt"
+                android:layout_toRightOf="@+id/foodTitle"
+                android:hint="Enter name of food"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/timeTitle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/foodTitle"
+                android:text="Time"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/timeEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:hint="Enter breakfast, lunch, dinner, or snack"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/timeTitle"
+                android:layout_below="@+id/foodEntry"/>
+
+            <TextView
+                android:id="@+id/calTitle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/timeTitle"
+                android:text="Calories"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/calEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:hint="Enter calorie amount for food"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/calTitle"
+                android:layout_below="@+id/timeEntry"/>
+
+            <ListView
+                android:id="@+id/foodList"
+                android:layout_width="fill_parent"
+                android:layout_height="200dp"
+                android:drawSelectorOnTop="false"
+                android:layout_below="@+id/calTitle" />
+
+           <!-- <TextView
+                android:id="@+id/macrosTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="20dp"
+
+                android:text="Macros: "
+                android:textSize="20sp"
+                android:layout_below="@+id/goalWeightTxt" />
+
+            <TextView
+                android:id="@+id/macros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:text="here "
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/goalWeightTxt"
+                android:layout_below="@+id/goalWeightTxt" />-->
+
+            <TextView
+                android:id="@+id/protein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="100dp"
+
+                android:text="Protein: "
+                android:textSize="20sp"
+                android:layout_below="@+id/macrosButton" />
+            <TextView
+                android:id="@+id/proteinNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/protein"
+                android:layout_below="@+id/macrosButton"/>
+
+            <TextView
+                android:id="@+id/carbs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="100dp"
+
+                android:text="Carbs: "
+                android:textSize="20sp"
+                android:layout_below="@+id/protein" />
+            <TextView
+                android:id="@+id/carbsNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="#"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/carbs"
+                android:layout_below="@+id/protein" />
+
+            <TextView
+                android:id="@+id/fat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="100dp"
+
+                android:text="Fat: "
+                android:textSize="20sp"
+                android:layout_below="@+id/carbs" />
+            <TextView
+                android:id="@+id/fatNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="#"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/fat"
+                android:layout_below="@+id/carbs"/>
+
+            <TextView
+                android:id="@+id/calorieGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="100dp"
+
+                android:text="Calorie Goal: "
+                android:textSize="20sp"
+                android:layout_below="@+id/fat" />
+            <TextView
+                android:id="@+id/calorieNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="#"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/calorieGoal"
+                android:layout_below="@+id/fat"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>
