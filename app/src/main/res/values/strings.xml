@@ -26,6 +26,9 @@
     <string name="savedWorkouts">Saved Workouts</string>
     <string name="home"> Back to Home</string>
 
+    <string name="startStopWatch">Start</string>
+    <string name="stopStopWatch">Stop</string>
+
     <string name="totalCalories">Total Calories for Today:</string>
     <string name="inputFood">Input Food</string>
     <string name="calcMacros">Calculate Macros</string>
