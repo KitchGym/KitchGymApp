@@ -10,9 +10,9 @@
         android:id="@+id/abs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/abs"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
@@ -24,10 +24,12 @@
         android:id="@+id/arms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/arms"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/legs"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
@@ -35,10 +37,11 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="25dp"
         android:text="@string/back"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/arms"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shoulders" />
 
@@ -46,10 +49,10 @@
         android:id="@+id/legs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="150dp"
         android:text="@string/legs"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/abs"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/arms" />
 
@@ -57,10 +60,11 @@
         android:id="@+id/shoulders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="75dp"
         android:text="@string/shoulders"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/muscleGroupsTitle" />
 
@@ -84,6 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="122dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="123dp"
         android:layout_marginBottom="64dp"
         android:onClick="switchToGenerateWorkout"
@@ -91,5 +96,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abs" />
 </androidx.constraintlayout.widget.ConstraintLayout>
