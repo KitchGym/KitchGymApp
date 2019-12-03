@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
+
 
 public class muscleGroups extends AppCompatActivity {
 
@@ -30,6 +32,8 @@ public class muscleGroups extends AppCompatActivity {
         backBox = findViewById(R.id.back);
         legsBox = findViewById(R.id.legs);
         absBox = findViewById(R.id.abs);
+
+        Log.d("ONSTART", "Entered onStart()");
 
     }
 

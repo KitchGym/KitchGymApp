@@ -1,23 +1,33 @@
 package com.example.kitchgym;
 
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.util.HashMap;
+import java.util.Map;
+
+@IgnoreExtraProperties
 public class Exercise {
-    public String name, description;
+    private String one, two, three;
 
     public Exercise(){
-        this.name = "Test";
-        this.description = "TestTest";
+
     }
 
-    public Exercise(String name, String description){
-        this.name = name;
-        this.description = description;
+    public Exercise(String one, String two, String three){
+        this.one = one;
+        this.two = two;
+        this.three = three;
     }
 
-    public String getName(){
-        return name;
+
+    public String getOne(){
+        return one;
     }
-    public String getDescription(){
-        return description;
+    public String getTwo(){
+        return two;
+    }
+    public String getThree(){
+        return three;
     }
 }
