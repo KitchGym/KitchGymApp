@@ -28,6 +28,10 @@
 
     <string name="totalCalories">Total Calories for Today:</string>
     <string name="inputFood">Input Food</string>
+    <string name="calcMacros">Calculate Macros</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
