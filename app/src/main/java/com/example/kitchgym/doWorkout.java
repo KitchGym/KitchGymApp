@@ -12,6 +12,7 @@ import android.view.View;
 
 public class doWorkout extends AppCompatActivity {
 
+    //partially sourced from: https://www.zoftino.com/android-chronometer-timer-stopwatch-tutorial
     private Chronometer chronometer;
     private boolean isStart;
 

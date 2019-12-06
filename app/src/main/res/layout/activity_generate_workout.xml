@@ -11,10 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="109dp"
-        android:layout_marginRight="109dp"
         android:text="@string/genWorkoutTitle"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,25 +24,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="30dp"
         android:onClick="switchToDoWorkout"
         android:text="@string/beginWorkout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/regenerateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/regenerate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/beginWorkoutButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerWorkout"
+        android:layout_width="400dp"
+        android:layout_height="530dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/beginWorkoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaysWorkoutTItle"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

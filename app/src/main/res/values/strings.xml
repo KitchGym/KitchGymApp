@@ -12,6 +12,7 @@
     <string name="abs">Abs</string>
     <string name="legs">Legs</string>
     <string name="arms">Arms</string>
+    <string name="chest">Chest</string>
     <string name="muscleTitle">Choose Your Target Muscle Groups</string>
     <string name="generateWorkout">Generate Workout</string>
     <string name="genWorkoutTitle">Today\'s Workout:</string>

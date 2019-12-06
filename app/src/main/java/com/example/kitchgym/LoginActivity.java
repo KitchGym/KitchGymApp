@@ -66,7 +66,10 @@ public class LoginActivity extends AppCompatActivity {
                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                       if(dataSnapshot.exists()) {
                           //if the query exists, login and save that user
+                          System.out.println(user);
                           user = dataSnapshot.child(username.getText().toString().trim()).getValue(User.class);
+                          System.out.println("~~~~~~~~~~~~~~");
+                          System.out.println(user.getName());
 
                           Intent intent = new Intent(LoginActivity.this, MainActivity.class );
                           intent.putExtra("User", user);
